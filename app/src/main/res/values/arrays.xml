@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tab_short_Title">
+        <item>精选</item>
+        <item>关注</item>
+        <item>新人</item>
+        <item>附近</item>
+    </string-array>
+
+
+    <string-array name="tab_Title">
+        <item>自选</item>
+        <item>市场</item>
+    </string-array>
+
+
+    <string-array name="tab_shichang_Title">
+        <item>期货</item>
+        <item>港股</item>
+        <item>美股</item>
+    </string-array>
+
+
+    <string-array name="tab_tome_Title">
+        <item>行情</item>
+        <item>交易</item>
+        <item>我的</item>
+    </string-array>
+
+
+
+    <string-array name="login_tab_Title">
+        <item>期货</item>
+        <item>股票</item>
+    </string-array>
+
+</resources>

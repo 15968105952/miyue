@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:layout_marginBottom="-12dp"
+        android:text="@string/kuaiyue"
+        />
+    <RadioGroup
+        android:id="@+id/rg_home"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@color/tab_checked_bg"
+        android:weightSum="4" >
+
+        <RadioButton
+            android:id="@+id/rb_find"
+            style="@style/tab_style"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/tab_home_bg"
+            android:text="@string/find" />
+
+
+        <!--<RadioButton-->
+        <!--style="@style/tab_style"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:drawableTop="@drawable/tab_brand_bg"-->
+        <!--android:text="@string/brand" />-->
+
+        <RadioButton
+            android:id="@+id/rb_videoshow"
+            style="@style/tab_style"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/tab_shopping_bg"
+            android:text="@string/videoshow" />
+
+        <RadioButton
+            android:id="@+id/rb_message"
+            style="@style/tab_style"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/tab_more_bg"
+            android:text="@string/message" />
+        <RadioButton
+            android:id="@+id/rb_my"
+            style="@style/tab_style"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/tab_search_bg"
+            android:text="@string/my" />
+    </RadioGroup>
+</LinearLayout>
