@@ -50,6 +50,7 @@ public class UserfulChooseFragment extends BaseFragment implements PullToRefresh
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(),"rl1",Toast.LENGTH_SHORT).show();
+
             }
         });
         rl2.setOnClickListener(new View.OnClickListener() {

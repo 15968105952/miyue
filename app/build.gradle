@@ -16,7 +16,6 @@ android {
         /* 添加如下配置就OK了*/
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
         multiDexEnabled true
-
     }
     buildTypes {
         release {

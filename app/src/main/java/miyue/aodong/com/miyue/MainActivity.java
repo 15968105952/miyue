@@ -5,11 +5,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.netease.nim.uikit.api.NimUIKit;
+import com.netease.nim.uikit.common.util.log.LogUtil;
 import com.netease.nimlib.sdk.AbortableFuture;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.RequestCallback;
 import com.netease.nimlib.sdk.StatusBarNotificationConfig;
-import com.netease.nimlib.sdk.auth.AuthService;
 import com.netease.nimlib.sdk.auth.LoginInfo;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ import miyue.aodong.com.miyue.fragment.MessageFragment;
 import miyue.aodong.com.miyue.fragment.MyFragment;
 import miyue.aodong.com.miyue.fragment.VideoShowFragment;
 import miyue.aodong.com.miyue.wanyiyun.DemoCache;
+import miyue.aodong.com.miyue.wanyiyun.preferences.Preferences;
 import miyue.aodong.com.miyue.wanyiyun.preferences.UserPreferences;
 
 public class MainActivity extends BaseActivity {
@@ -111,10 +113,50 @@ public class MainActivity extends BaseActivity {
     }
     private void login() {
         final String account ="13938217043";
-        final String token = "mazhuang1";
-        // 登录
+        final String token = "mazhuang123";
+        /*// 登录
         LoginInfo info = new LoginInfo("13938217043", "mazhuang123"); // config...
-        NIMClient.getService(AuthService.class).login(info).setCallback(callback);
+        NIMClient.getService(AuthService.class).login(info).setCallback(callback);*/
+        // 登录
+        loginRequest = NimUIKit.login(new LoginInfo(account, token), new RequestCallback<LoginInfo>() {
+            @Override
+            public void onSuccess(LoginInfo param) {
+                LogUtil.i(TAG, "login success");
+                Toast.makeText(MainActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
+//                onLoginDone();
+
+                DemoCache.setAccount(account);
+                saveLoginInfo(account, token);
+
+                // 初始化消息提醒配置
+                initNotificationConfig();
+
+                // 进入主界面
+//                MainActivity.start(LoginActivity.this, null);
+//                finish();
+            }
+
+            @Override
+            public void onFailed(int code) {
+//                onLoginDone();
+                if (code == 302 || code == 404) {
+                    Toast.makeText(MainActivity.this, R.string.login_failed, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "登录失败: " + code, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onException(Throwable exception) {
+                Toast.makeText(MainActivity.this, R.string.login_exception, Toast.LENGTH_LONG).show();
+//                onLoginDone();
+            }
+        });
+    }
+
+    private void saveLoginInfo(final String account, final String token) {
+        Preferences.saveUserAccount(account);
+        Preferences.saveUserToken(token);
     }
 
     private void initNotificationConfig() {
