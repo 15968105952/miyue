@@ -16,4 +16,11 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/tab_text_color</item>
     </style>
+    <!--分割线-->
+    <!--信息输入框相关布局，左侧textView，右侧editText-->
+    <style name="cut_off_rule">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/tab_checked_bg</item>
+    </style>
 </resources>

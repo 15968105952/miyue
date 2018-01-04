@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 通用 -->
+    <dimen name="isetting_item_height">55dip</dimen>
+    <dimen name="label">12sp</dimen>
+    <dimen name="throughput_rate">9sp</dimen>
+</resources>

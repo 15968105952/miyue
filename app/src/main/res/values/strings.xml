@@ -5,4 +5,16 @@
     <string name="message">消息</string>
     <string name="my">我的</string>
     <string name="kuaiyue">快约</string>
+    <string name="release_refresh">释放立即刷新</string>
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="refreshing">正在刷新</string>
+    <string name="refresh_success">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="load_more_fail">加载失败</string>
+    <string name="charge_signature">收费设置</string>
+    <string name="video_recording">视频记录</string>
+    <string name="balance">账户余额</string>
+    <string name="video_auth">视频认证</string>
+    <string name="setting">设置</string>
+    <string name="login_out">退出登录</string>
 </resources>

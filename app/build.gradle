@@ -29,4 +29,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'com.android.support:design:24.1.1'
+    /*圆形图片加载*/
+    compile 'com.facebook.fresco:fresco:1.5.0'
 }

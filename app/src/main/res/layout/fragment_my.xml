@@ -1,17 +1,382 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:gravity="center"
-              android:background="#fff"
-              android:orientation="vertical">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textview"
-        android:layout_width="wrap_content"
-        android:textColor="#000"
-        android:layout_height="wrap_content"
-        android:text="我是我的的Fragemnt,你好"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <TextView
+                android:id="@+id/tv_editor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="编辑"
+                android:textColor="@color/marker_text_bg"
+                android:textSize="@dimen/label" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sd_head"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/headimage_init" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="125dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_nick_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="昵称:哈哈"
+                    android:textColor="@color/marker_text_bg" />
+
+                <TextView
+                    android:id="@+id/tv_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="性别：男"
+                    android:textColor="@color/marker_text_bg" />
+
+                <TextView
+                    android:id="@+id/tv_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年龄：23"
+                    android:textColor="@color/marker_text_bg" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID:123456" />
+
+                <TextView
+                    android:id="@+id/tv_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="所在地" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="170dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_concern"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="关注|100" />
+
+                <TextView
+                    android:id="@+id/tv_fans"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="粉丝|100" />
+
+                <TextView
+                    android:id="@+id/tv_black_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="黑名单|100" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_Personality_signature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:gravity="center"
+                android:text="个性签名：别低头，皇冠会掉" />
+        </RelativeLayout>
+
+        <View
+            style="@style/cut_off_rule"
+            ></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:background="#F5F5F9"
+            android:orientation="horizontal">
+             <RelativeLayout
+                 android:layout_width="0dp"
+                 android:layout_height="50dp"
+                 android:layout_weight="1">
+            <ImageView
+                android:id="@+id/iv1"
+                 android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/library_banner" />
+
+             </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/iv2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/library_banner" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+               android:layout_marginLeft="20dp"
+                android:layout_weight="1">
+                <ImageView
+                  android:id="@+id/iv3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/library_banner" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/iv4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/library_banner" />
+
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            style="@style/cut_off_rule"
+            ></View>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    ></LinearLayout>
+        <View
+            style="@style/cut_off_rule"
+            ></View>
+
+        <RelativeLayout
+            android:id="@+id/rl_Charge_signature"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/charge_signature"
+                android:layout_marginLeft="80dp"
+                android:gravity="center_vertical"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/row"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <View
+            style="@style/cut_off_rule"
+            ></View>
+
+        <RelativeLayout
+            android:id="@+id/rl_video_recording"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/video_recording"
+                android:layout_marginLeft="80dp"
+                android:gravity="center_vertical"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/row"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <View
+            style="@style/cut_off_rule"
+            ></View>
+
+        <RelativeLayout
+            android:id="@+id/rl_balance"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/balance"
+                android:layout_marginLeft="80dp"
+                android:gravity="center_vertical"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/row"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <View
+            style="@style/cut_off_rule"
+            ></View>
+
+        <RelativeLayout
+            android:id="@+id/rl_video_auth"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/video_auth"
+                android:layout_marginLeft="80dp"
+                android:gravity="center_vertical"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/row"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <View
+            style="@style/cut_off_rule"
+            ></View>
+        <RelativeLayout
+            android:id="@+id/rl_setting"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/setting"
+                android:layout_marginLeft="80dp"
+                android:gravity="center_vertical"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/row"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <View
+            style="@style/cut_off_rule"
+            ></View>
+        <RelativeLayout
+            android:id="@+id/rl_login_out"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/login_out"
+                android:layout_marginLeft="80dp"
+                android:gravity="center_vertical"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/row"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
