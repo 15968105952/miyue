@@ -21,6 +21,7 @@ import miyue.aodong.com.miyue.wanyiyun.manager.NimDemoLocationProvider;
 import miyue.aodong.com.miyue.wanyiyun.manager.SessionHelper;
 import miyue.aodong.com.miyue.wanyiyun.parser.ContactHelper;
 import miyue.aodong.com.miyue.wanyiyun.preferences.Preferences;
+import miyue.aodong.com.miyue.wanyiyun.preferences.UserPreferences;
 
 /**
  * Created by admin on 2018/1/3.
@@ -57,9 +58,9 @@ public class MyApplation extends Application {
             PinYin.init(this);
             PinYin.validate();
             // 初始化UIKit模块
-//            initUIKit();
+            initUIKit();
             // 初始化消息提醒
-//            NIMClient.toggleNotification(UserPreferences.getNotificationToggle());
+            NIMClient.toggleNotification(UserPreferences.getNotificationToggle());
             // 云信sdk相关业务初始化
 //            NIMInitManager.getInstance().init(true);
         }
