@@ -123,34 +123,35 @@
                 android:text="个性签名：别低头，皇冠会掉" />
         </RelativeLayout>
 
-        <View
-            style="@style/cut_off_rule"
-            ></View>
+        <View style="@style/cut_off_rule"></View>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:gravity="center"
             android:background="#F5F5F9"
+            android:gravity="center"
             android:orientation="horizontal">
-             <RelativeLayout
-                 android:layout_width="0dp"
-                 android:layout_height="50dp"
-                 android:layout_weight="1">
-            <ImageView
-                android:id="@+id/iv1"
-                 android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerInParent="true"
-                android:background="@drawable/library_banner" />
 
-             </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/library_banner" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="1">
+
                 <ImageView
                     android:id="@+id/iv2"
                     android:layout_width="50dp"
@@ -163,21 +164,24 @@
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-               android:layout_marginLeft="20dp"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1">
+
                 <ImageView
-                  android:id="@+id/iv3"
+                    android:id="@+id/iv3"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/library_banner" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1">
+
                 <ImageView
                     android:id="@+id/iv4"
                     android:layout_width="50dp"
@@ -187,196 +191,185 @@
 
             </RelativeLayout>
         </LinearLayout>
-        <View
-            style="@style/cut_off_rule"
-            ></View>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    ></LinearLayout>
-        <View
-            style="@style/cut_off_rule"
-            ></View>
+
+        <View style="@style/cut_off_rule"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"></LinearLayout>
+
+        <View style="@style/cut_off_rule"></View>
 
         <RelativeLayout
             android:id="@+id/rl_Charge_signature"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            >
+            android:layout_height="50dp">
+
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:src="@drawable/library_banner"
                 android:layout_marginLeft="10dp"
-                />
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/charge_signature"
                 android:layout_marginLeft="80dp"
                 android:gravity="center_vertical"
-                />
+                android:text="@string/charge_signature" />
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/row"
                 android:layout_centerVertical="true"
-                />
+                android:src="@drawable/row" />
         </RelativeLayout>
-        <View
-            style="@style/cut_off_rule"
-            ></View>
+
+        <View style="@style/cut_off_rule"></View>
 
         <RelativeLayout
             android:id="@+id/rl_video_recording"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            >
+            android:layout_height="50dp">
+
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:src="@drawable/library_banner"
                 android:layout_marginLeft="10dp"
-                />
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/video_recording"
                 android:layout_marginLeft="80dp"
                 android:gravity="center_vertical"
-                />
+                android:text="@string/video_recording" />
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/row"
                 android:layout_centerVertical="true"
-                />
+                android:src="@drawable/row" />
         </RelativeLayout>
-        <View
-            style="@style/cut_off_rule"
-            ></View>
+
+        <View style="@style/cut_off_rule"></View>
 
         <RelativeLayout
             android:id="@+id/rl_balance"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            >
+            android:layout_height="50dp">
+
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:src="@drawable/library_banner"
                 android:layout_marginLeft="10dp"
-                />
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/balance"
                 android:layout_marginLeft="80dp"
                 android:gravity="center_vertical"
-                />
+                android:text="@string/balance" />
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/row"
                 android:layout_centerVertical="true"
-                />
+                android:src="@drawable/row" />
         </RelativeLayout>
-        <View
-            style="@style/cut_off_rule"
-            ></View>
+
+        <View style="@style/cut_off_rule"></View>
 
         <RelativeLayout
             android:id="@+id/rl_video_auth"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            >
+            android:layout_height="50dp">
+
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:src="@drawable/library_banner"
                 android:layout_marginLeft="10dp"
-                />
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/video_auth"
                 android:layout_marginLeft="80dp"
                 android:gravity="center_vertical"
-                />
+                android:text="@string/video_auth" />
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/row"
                 android:layout_centerVertical="true"
-                />
+                android:src="@drawable/row" />
         </RelativeLayout>
-        <View
-            style="@style/cut_off_rule"
-            ></View>
+
+        <View style="@style/cut_off_rule"></View>
+
         <RelativeLayout
             android:id="@+id/rl_setting"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            >
+            android:layout_height="50dp">
+
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:src="@drawable/library_banner"
                 android:layout_marginLeft="10dp"
-                />
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/setting"
                 android:layout_marginLeft="80dp"
                 android:gravity="center_vertical"
-                />
+                android:text="@string/setting" />
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/row"
                 android:layout_centerVertical="true"
-                />
+                android:src="@drawable/row" />
         </RelativeLayout>
-        <View
-            style="@style/cut_off_rule"
-            ></View>
+
+        <View style="@style/cut_off_rule"></View>
+
         <RelativeLayout
             android:id="@+id/rl_login_out"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            >
+            android:layout_height="50dp">
+
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:src="@drawable/library_banner"
                 android:layout_marginLeft="10dp"
-                />
+                android:gravity="center_vertical"
+                android:src="@drawable/library_banner" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/login_out"
                 android:layout_marginLeft="80dp"
                 android:gravity="center_vertical"
-                />
+                android:text="@string/login_out" />
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/row"
                 android:layout_centerVertical="true"
-                />
+                android:src="@drawable/row" />
         </RelativeLayout>
     </LinearLayout>
 </ScrollView>
