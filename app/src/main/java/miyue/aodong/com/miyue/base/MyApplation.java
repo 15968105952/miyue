@@ -17,6 +17,7 @@ import com.netease.nimlib.sdk.util.NIMUtil;
 import miyue.aodong.com.miyue.wanyiyun.DemoCache;
 import miyue.aodong.com.miyue.wanyiyun.config.NimSDKOptionConfig;
 import miyue.aodong.com.miyue.wanyiyun.manager.DemoOnlineStateContentProvider;
+import miyue.aodong.com.miyue.wanyiyun.manager.NIMInitManager;
 import miyue.aodong.com.miyue.wanyiyun.manager.NimDemoLocationProvider;
 import miyue.aodong.com.miyue.wanyiyun.manager.SessionHelper;
 import miyue.aodong.com.miyue.wanyiyun.parser.ContactHelper;
@@ -62,7 +63,7 @@ public class MyApplation extends Application {
             // 初始化消息提醒
             NIMClient.toggleNotification(UserPreferences.getNotificationToggle());
             // 云信sdk相关业务初始化
-//            NIMInitManager.getInstance().init(true);
+            NIMInitManager.getInstance().init(true);
         }
     }
 

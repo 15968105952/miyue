@@ -19,6 +19,7 @@ import miyue.aodong.com.miyue.base.BaseFragment;
 import miyue.aodong.com.miyue.carouselfigure.StartRoll;
 import miyue.aodong.com.miyue.listener.PullToRefreshListener;
 import miyue.aodong.com.miyue.view.PullToRefreshRecyclerView;
+import miyue.aodong.com.miyue.wanyiyun.activity.VideoActivity;
 
 /**
  * Created by syh11 on 2017/12/15.
@@ -50,7 +51,7 @@ public class UserfulChooseFragment extends BaseFragment implements PullToRefresh
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(),"rl1",Toast.LENGTH_SHORT).show();
-
+                VideoActivity.start(getContext(), "13938217043");
             }
         });
         rl2.setOnClickListener(new View.OnClickListener() {

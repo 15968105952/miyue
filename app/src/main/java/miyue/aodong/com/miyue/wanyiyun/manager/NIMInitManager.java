@@ -26,6 +26,7 @@ import java.util.Map;
 
 import miyue.aodong.com.miyue.R;
 import miyue.aodong.com.miyue.wanyiyun.DemoCache;
+import miyue.aodong.com.miyue.wanyiyun.activity.VideoActivity;
 import miyue.aodong.com.miyue.wanyiyun.preferences.UserPreferences;
 
 /**
@@ -95,7 +96,8 @@ public class NIMInitManager {
               /*暂时不用*/
                 // 有网络来电打开AVChatActivity
                 AVChatProfile.getInstance().setAVChatting(true);
-//                AVChatProfile.getInstance().launchActivity(data, com.netease.nim.demo.others.MainActivity.FROM_BROADCASTRECEIVER);
+                /*进行视频聊天*/
+                AVChatProfile.getInstance().launchActivity(data, VideoActivity.FROM_BROADCASTRECEIVER);
             }
         }, register);
     }

@@ -5,6 +5,7 @@ import com.netease.nim.uikit.common.framework.infra.Handlers;
 import com.netease.nimlib.sdk.avchat.model.AVChatData;
 
 import miyue.aodong.com.miyue.wanyiyun.DemoCache;
+import miyue.aodong.com.miyue.wanyiyun.activity.VideoActivity;
 
 /**
  * Created by huangjun on 2015/5/12.
@@ -37,7 +38,7 @@ public class AVChatProfile {
             public void run() {
                 // 启动，如果 task正在启动，则稍等一下
                 if (!DemoCache.isMainTaskLaunching()) {
-//                    VideoActivity.launch(DemoCache.getContext(), data, source);
+                    VideoActivity.launch(DemoCache.getContext(), data, source);
                 } else {
                     launchActivity(data, source);
                 }

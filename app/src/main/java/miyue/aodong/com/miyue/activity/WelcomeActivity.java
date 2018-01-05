@@ -20,6 +20,7 @@ import com.netease.nimlib.sdk.msg.model.IMMessage;
 
 import java.util.ArrayList;
 
+import miyue.aodong.com.miyue.MainActivity;
 import miyue.aodong.com.miyue.R;
 import miyue.aodong.com.miyue.wanyiyun.DemoCache;
 import miyue.aodong.com.miyue.wanyiyun.preferences.Preferences;
@@ -110,8 +111,8 @@ public class WelcomeActivity extends UI {
     }
 
     private void login() {
-        final String account ="13938217043";
-        final String token = "9f6814665694dfe4c0f89ea590b68228";
+        final String account ="1824902907";
+        final String token = "mazhuang123";
         // 登录
         loginRequest = NimUIKit.login(new LoginInfo(account, token), new RequestCallback<LoginInfo>() {
             @Override
@@ -120,12 +121,12 @@ public class WelcomeActivity extends UI {
                 Toast.makeText(WelcomeActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
 
                 DemoCache.setAccount(account);
-
+                saveLoginInfo(account, token);
                 // 初始化消息提醒配置
                 initNotificationConfig();
 
                 // 进入主界面
-//                MainActivity.start(WelcomeActivity.this, null);
+               startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
                 finish();
             }
 
@@ -144,7 +145,10 @@ public class WelcomeActivity extends UI {
             }
         });
     }
-
+    private void saveLoginInfo(final String account, final String token) {
+        Preferences.saveUserAccount(account);
+        Preferences.saveUserToken(token);
+    }
 
 
     private void initNotificationConfig() {

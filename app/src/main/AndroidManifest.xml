@@ -59,24 +59,25 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <meta-data
             android:name="com.netease.nim.appKey"
             android:value="cef259b87ac44088727bb0cb278bd305" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
+       <activity android:name=".activity.WelcomeActivity">
+           <intent-filter>
+               <action android:name="android.intent.action.MAIN" />
 
+               <category android:name="android.intent.category.LAUNCHER" />
+           </intent-filter>
+       </activity>
         <!--网易云-->
         <activity android:name=".wanyiyun.activity.WatchSnapChatPictureActivity"></activity>
-        <activity android:name=".wanyiyun.video.VideoActivity"></activity>
+        <activity android:name=".wanyiyun.activity.VideoActivity"></activity>
         <!--高德地图-->
         <activity android:name=".wanyiyun.activity.LocationAmapActivity" />
         <activity android:name=".wanyiyun.activity.NavigationAmapActivity" />
