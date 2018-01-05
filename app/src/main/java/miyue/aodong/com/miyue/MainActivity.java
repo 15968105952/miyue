@@ -18,6 +18,8 @@ import com.netease.nimlib.sdk.StatusBarNotificationConfig;
 import com.netease.nimlib.sdk.StatusCode;
 import com.netease.nimlib.sdk.auth.AuthServiceObserver;
 import com.netease.nimlib.sdk.auth.LoginInfo;
+import com.netease.nimlib.sdk.msg.SystemMessageObserver;
+import com.netease.nimlib.sdk.msg.SystemMessageService;
 import com.netease.nimlib.sdk.msg.model.IMMessage;
 
 import java.util.ArrayList;
@@ -27,6 +29,9 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import miyue.aodong.com.miyue.base.BaseActivity;
 import miyue.aodong.com.miyue.base.BaseFragment;
+import miyue.aodong.com.miyue.chat.ReminderItem;
+import miyue.aodong.com.miyue.chat.ReminderManager;
+import miyue.aodong.com.miyue.chat.SystemMessageUnreadManager;
 import miyue.aodong.com.miyue.fragment.FindFragment;
 import miyue.aodong.com.miyue.fragment.MessageFragment;
 import miyue.aodong.com.miyue.fragment.MyFragment;
@@ -39,7 +44,8 @@ import miyue.aodong.com.miyue.wanyiyun.modle.Extras;
 import miyue.aodong.com.miyue.wanyiyun.preferences.Preferences;
 import miyue.aodong.com.miyue.wanyiyun.preferences.UserPreferences;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements ReminderManager.UnreadNumChangedCallback{
+
     private static final String EXTRA_APP_QUIT = "APP_QUIT";
     @InjectView(R.id.fl_content)
     FrameLayout flContent;
@@ -121,12 +127,88 @@ public class MainActivity extends BaseActivity {
         fragments.add(new MessageFragment());
         fragments.add(new MyFragment());
         rgHome.check(R.id.rb_find);
+        /*显示消息数量*/
+        registerMsgUnreadInfoObserver(true);
+        registerSystemMessageObservers(true);
+        requestSystemMessageUnreadCount();
+        initUnreadCover();
         //退出登陆
         onParseIntent();
         //监听是否强制下线
         registerObservers(true);
 
     }
+
+    /**
+     * 注册/注销系统消息未读数变化
+     *
+     * @param register
+     */
+    private void registerSystemMessageObservers(boolean register) {
+        NIMClient.getService(SystemMessageObserver.class).observeUnreadCountChange(sysMsgUnreadCountChangedObserver,
+                register);
+    }
+
+    private Observer<Integer> sysMsgUnreadCountChangedObserver = new Observer<Integer>() {
+        @Override
+        public void onEvent(Integer unreadCount) {
+            SystemMessageUnreadManager.getInstance().setSysMsgUnreadCount(unreadCount);
+            ReminderManager.getInstance().updateContactUnreadNum(unreadCount);
+        }
+    };
+
+    /**
+     * 注册未读消息数量观察者
+     */
+    private void registerMsgUnreadInfoObserver(boolean register) {
+        if (register) {
+            ReminderManager.getInstance().registerUnreadNumChangedCallback(this);
+        } else {
+            ReminderManager.getInstance().unregisterUnreadNumChangedCallback(this);
+        }
+    }
+
+    /**
+     * 查询系统消息未读数
+     */
+    private void requestSystemMessageUnreadCount() {
+        int unread = NIMClient.getService(SystemMessageService.class).querySystemMessageUnreadCountBlock();
+        SystemMessageUnreadManager.getInstance().setSysMsgUnreadCount(unread);
+        ReminderManager.getInstance().updateContactUnreadNum(unread);
+    }
+
+    /**
+     * 初始化未读红点动画
+     */
+    private void initUnreadCover() {
+        /*DropManager.getInstance().init(MainActivity.this, (DropCover) findView(R.id.unread_cover),
+                new DropCover.IDropCompletedListener() {
+                    @Override
+                    public void onCompleted(Object id, boolean explosive) {
+                        if (id == null || !explosive) {
+                            return;
+                        }
+
+                        if (id instanceof RecentContact) {
+                            RecentContact r = (RecentContact) id;
+                            NIMClient.getService(MsgService.class).clearUnreadCount(r.getContactId(), r.getSessionType());
+                            LogUtil.i("HomeFragment", "clearUnreadCount, sessionId=" + r.getContactId());
+                        } else if (id instanceof String) {
+                            if (((String) id).contentEquals("0")) {
+                                NIMClient.getService(MsgService.class).clearAllUnreadCount();
+                                LogUtil.i("HomeFragment", "clearAllUnreadCount");
+                            } else if (((String) id).contentEquals("1")) {
+                                NIMClient.getService(SystemMessageService.class).resetSystemMessageUnreadCount();
+                                LogUtil.i("HomeFragment", "clearAllSystemUnreadCount");
+                            }
+                        }
+                    }
+                });*/
+    }
+
+
+
+
     /********聊天部分监听*********/
     private void registerObservers(boolean register) {
         NIMClient.getService(AuthServiceObserver.class).observeOnlineStatus(userStatusObserver, register);
@@ -258,5 +340,10 @@ public class MainActivity extends BaseActivity {
         }
         // 更新配置
         NIMClient.updateStatusBarNotificationConfig(statusBarNotificationConfig);
+    }
+
+    @Override
+    public void onUnreadNumChanged(ReminderItem item) {
+
     }
 }

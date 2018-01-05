@@ -21,6 +21,7 @@ public class RecentContactAdapter extends BaseMultiItemQuickAdapter<RecentContac
 
     interface ViewType {
         int VIEW_TYPE_COMMON = 1;
+
         int VIEW_TYPE_TEAM = 2;
     }
 

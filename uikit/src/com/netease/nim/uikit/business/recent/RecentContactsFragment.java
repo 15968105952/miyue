@@ -105,6 +105,7 @@ public class RecentContactsFragment extends TFragment {
         adapter.notifyDataSetChanged();
         boolean empty = items.isEmpty() && msgLoaded;
         emptyBg.setVisibility(empty ? View.VISIBLE : View.GONE);
+
         emptyHint.setHint("还没有会话，在通讯录中找个人聊聊吧！");
     }
 

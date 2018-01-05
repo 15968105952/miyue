@@ -20,6 +20,7 @@ import miyue.aodong.com.miyue.carouselfigure.StartRoll;
 import miyue.aodong.com.miyue.listener.PullToRefreshListener;
 import miyue.aodong.com.miyue.view.PullToRefreshRecyclerView;
 import miyue.aodong.com.miyue.wanyiyun.activity.VideoActivity;
+import miyue.aodong.com.miyue.wanyiyun.manager.SessionHelper;
 
 /**
  * Created by syh11 on 2017/12/15.
@@ -51,13 +52,15 @@ public class UserfulChooseFragment extends BaseFragment implements PullToRefresh
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(),"rl1",Toast.LENGTH_SHORT).show();
-                VideoActivity.start(getContext(), "13938217043");
+                VideoActivity.start(getContext(), "1824902907");
             }
         });
         rl2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(),"rl2",Toast.LENGTH_SHORT).show();
+                 /*跳转到通讯录列表界面*/
+                SessionHelper.startP2PSession(getContext(), "13938217043");
             }
         });
         rlBeautifulGirl.addHeaderView(headView);
